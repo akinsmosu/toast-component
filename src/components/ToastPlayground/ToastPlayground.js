@@ -7,13 +7,18 @@ import styles from './ToastPlayground.module.css';
 import ToastShelf from "../ToastShelf";
 import { ToastContext } from "../ToastProvider";
 
+const VARIANT_OPTIONS = ['notice', 'warning', 'success', 'error'];
 
 function ToastPlayground() {
 
   const { createToast } = React.useContext(ToastContext)
 
-  createToast(message, variant){
+  const [message, setMessage] = React.useState('');
+  const [variant, setVariant] = React.useState(VARIANT_OPTIONS[0])
 
+  function handleCreateToast(event){
+    event.preventDefault()
+    createToast(message, variant)
   }
 
   return (
@@ -22,12 +27,12 @@ function ToastPlayground() {
         <img alt="Cute toast mascot" src="/toast.png" />
         <h1>Toast Playground</h1>
       </header>
-      <ToastShelf handleDismiss={handleDismiss} />
+      <ToastShelf />
 
       <form
         className={styles.controlsWrapper}
-        onSubmit={handleAddToast}>
-      >
+        onSubmit={handleCreateToast}
+        >
         <div className={styles.row}>
           <label
             htmlFor="message"

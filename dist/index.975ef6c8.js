@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"farZc":[function(require,module,exports) {
+})({"cUXhu":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -27243,7 +27243,23 @@ var _toastPlaygroundModuleCss = require("./ToastPlayground.module.css");
 var _toastPlaygroundModuleCssDefault = parcelHelpers.interopDefault(_toastPlaygroundModuleCss);
 var _toastShelf = require("../ToastShelf");
 var _toastShelfDefault = parcelHelpers.interopDefault(_toastShelf);
+var _toastProvider = require("../ToastProvider");
+var _s = $RefreshSig$();
+const VARIANT_OPTIONS = [
+    "notice",
+    "warning",
+    "success",
+    "error"
+];
 function ToastPlayground() {
+    _s();
+    const { createToast } = (0, _reactDefault.default).useContext((0, _toastProvider.ToastContext));
+    const [message, setMessage] = (0, _reactDefault.default).useState("");
+    const [variant, setVariant] = (0, _reactDefault.default).useState(VARIANT_OPTIONS[0]);
+    function handleCreateToast(event) {
+        event.preventDefault();
+        createToast(message, variant);
+    }
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: (0, _toastPlaygroundModuleCssDefault.default).wrapper,
         children: [
@@ -27254,34 +27270,31 @@ function ToastPlayground() {
                         src: "/toast.png"
                     }, void 0, false, {
                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                        lineNumber: 15,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                         children: "Toast Playground"
                     }, void 0, false, {
                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                        lineNumber: 16,
+                        lineNumber: 28,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                lineNumber: 14,
+                lineNumber: 26,
                 columnNumber: 7
             }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _toastShelfDefault.default), {
-                handleDismiss: handleDismiss
-            }, void 0, false, {
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _toastShelfDefault.default), {}, void 0, false, {
                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                lineNumber: 18,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
                 className: (0, _toastPlaygroundModuleCssDefault.default).controlsWrapper,
-                onSubmit: handleAddToast,
+                onSubmit: handleCreateToast,
                 children: [
-                    ">",
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: (0, _toastPlaygroundModuleCssDefault.default).row,
                         children: [
@@ -27294,7 +27307,7 @@ function ToastPlayground() {
                                 children: "Message"
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 25,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27308,18 +27321,18 @@ function ToastPlayground() {
                                     }
                                 }, void 0, false, {
                                     fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                    lineNumber: 33,
+                                    lineNumber: 45,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 32,
+                                lineNumber: 44,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                        lineNumber: 24,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27330,7 +27343,7 @@ function ToastPlayground() {
                                 children: "Variant"
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 45,
+                                lineNumber: 57,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27349,25 +27362,25 @@ function ToastPlayground() {
                                                 }
                                             }, void 0, false, {
                                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                                lineNumber: 51,
+                                                lineNumber: 63,
                                                 columnNumber: 19
                                             }, this),
                                             option
                                         ]
                                     }, crypto.randomUUID(), true, {
                                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                        lineNumber: 50,
+                                        lineNumber: 62,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 46,
+                                lineNumber: 58,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                        lineNumber: 44,
+                        lineNumber: 56,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27377,7 +27390,7 @@ function ToastPlayground() {
                                 className: (0, _toastPlaygroundModuleCssDefault.default).label
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 68,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27386,33 +27399,34 @@ function ToastPlayground() {
                                     children: "Pop Toast!"
                                 }, void 0, false, {
                                     fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                    lineNumber: 72,
+                                    lineNumber: 84,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                                lineNumber: 69,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                        lineNumber: 67,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/ToastPlayground/ToastPlayground.js",
-                lineNumber: 20,
+                lineNumber: 32,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/ToastPlayground/ToastPlayground.js",
-        lineNumber: 13,
+        lineNumber: 25,
         columnNumber: 5
     }, this);
 }
+_s(ToastPlayground, "f3Vq1WNrs8selH1tdNZw5QutYfk=");
 _c = ToastPlayground;
 exports.default = ToastPlayground;
 var _c;
@@ -27423,7 +27437,7 @@ $RefreshReg$(_c, "ToastPlayground");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Button":"bNbfl","../Toast":"4zgg1","./ToastPlayground.module.css":"53bch","../ToastShelf":"aliCa","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNbfl":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Button":"bNbfl","../Toast":"4zgg1","./ToastPlayground.module.css":"53bch","../ToastShelf":"aliCa","../ToastProvider":"kY0Qf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNbfl":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _buttonDefault.default));
@@ -27657,17 +27671,21 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactFeather = require("react-feather");
+var _toastProvider = require("../ToastProvider");
 var _visuallyHidden = require("../VisuallyHidden");
 var _visuallyHiddenDefault = parcelHelpers.interopDefault(_visuallyHidden);
 var _toastModuleCss = require("./Toast.module.css");
 var _toastModuleCssDefault = parcelHelpers.interopDefault(_toastModuleCss);
+var _s = $RefreshSig$();
 const ICONS_BY_VARIANT = {
     notice: (0, _reactFeather.Info),
     warning: (0, _reactFeather.AlertTriangle),
     success: (0, _reactFeather.CheckCircle),
     error: (0, _reactFeather.AlertOctagon)
 };
-function Toast({ id, children, variant, handleDismiss }) {
+function Toast({ id, children, variant }) {
+    _s();
+    const { dismissToast } = (0, _reactDefault.default).useContext((0, _toastProvider.ToastContext));
     const className = `styles.`;
     console.log("className: ", className);
     const Icon = ICONS_BY_VARIANT[variant];
@@ -27680,12 +27698,12 @@ function Toast({ id, children, variant, handleDismiss }) {
                     size: 24
                 }, void 0, false, {
                     fileName: "src/components/Toast/Toast.js",
-                    lineNumber: 30,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/Toast/Toast.js",
-                lineNumber: 29,
+                lineNumber: 31,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -27693,40 +27711,41 @@ function Toast({ id, children, variant, handleDismiss }) {
                 children: children
             }, void 0, false, {
                 fileName: "src/components/Toast/Toast.js",
-                lineNumber: 32,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>handleDismiss(id),
+                onClick: ()=>dismissToast(id),
                 className: (0, _toastModuleCssDefault.default).closeButton,
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactFeather.X), {
                         size: 24
                     }, void 0, false, {
                         fileName: "src/components/Toast/Toast.js",
-                        lineNumber: 36,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _visuallyHiddenDefault.default), {
                         children: "Dismiss message"
                     }, void 0, false, {
                         fileName: "src/components/Toast/Toast.js",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "src/components/Toast/Toast.js",
-                lineNumber: 35,
+                lineNumber: 37,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/Toast/Toast.js",
-        lineNumber: 28,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
+_s(Toast, "57iVbbJPu/dXsZw2b/BqCsZav/M=");
 _c = Toast;
 exports.default = Toast;
 var _c;
@@ -27737,7 +27756,7 @@ $RefreshReg$(_c, "Toast");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-feather":"hblQm","../VisuallyHidden":"fj2ki","./Toast.module.css":"edJ1L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hblQm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-feather":"hblQm","../VisuallyHidden":"fj2ki","./Toast.module.css":"edJ1L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../ToastProvider":"kY0Qf"}],"hblQm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Activity", ()=>(0, _activityDefault.default));
@@ -29846,7 +29865,81 @@ module.exports["success"] = `GFhwnW_success`;
 module.exports["toast"] = `GFhwnW_toast`;
 module.exports["warning"] = `GFhwnW_warning`;
 
-},{}],"53bch":[function(require,module,exports) {
+},{}],"kY0Qf":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "default", ()=>(0, _toastProviderDefault.default));
+var _toastProvider = require("./ToastProvider");
+parcelHelpers.exportAll(_toastProvider, exports);
+var _toastProviderDefault = parcelHelpers.interopDefault(_toastProvider);
+
+},{"./ToastProvider":"4NsNf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4NsNf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ad1d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ad1d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ToastContext", ()=>ToastContext);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+const ToastContext = /*#__PURE__*/ (0, _reactDefault.default).createContext();
+function ToastProvider({ children }) {
+    _s();
+    const [toasts, setToasts] = (0, _reactDefault.default).useState([
+        {
+            id: crypto.randomUUID(),
+            message: "butthead",
+            variant: "warning"
+        }
+    ]);
+    function createToast(message, variant) {
+        const newToast = {
+            id: crypto.randomUUID(),
+            message,
+            variant
+        };
+        const nextToasts = [
+            ...toasts,
+            newToast
+        ];
+        setToasts(nextToasts);
+    }
+    function dismissToast(id) {
+        const nextToasts = toasts.filter((toast)=>{
+            return toast.id !== id;
+        });
+        setToasts(nextToasts);
+    }
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ToastContext.Provider, {
+        value: {
+            toasts,
+            createToast,
+            dismissToast
+        },
+        children: children
+    }, void 0, false, {
+        fileName: "src/components/ToastProvider/ToastProvider.js",
+        lineNumber: 29,
+        columnNumber: 5
+    }, this);
+}
+_s(ToastProvider, "U3hCVJ8YPgc+jw6KVgGlxbUuvxA=");
+_c = ToastProvider;
+exports.default = ToastProvider;
+var _c;
+$RefreshReg$(_c, "ToastProvider");
+
+  $parcel$ReactRefreshHelpers$ad1d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"53bch":[function(require,module,exports) {
 module.exports["controlsWrapper"] = `d7rB_G_controlsWrapper`;
 module.exports["inputWrapper"] = `d7rB_G_inputWrapper`;
 module.exports["label"] = `d7rB_G_label`;
@@ -29885,7 +29978,7 @@ var _toastProvider = require("../ToastProvider");
 var _s = $RefreshSig$();
 function ToastShelf({ handleDismiss }) {
     _s();
-    const { toasts } = (0, _reactDefault.default).useContext();
+    const { toasts } = (0, _reactDefault.default).useContext((0, _toastProvider.ToastContext));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ol", {
         className: (0, _toastShelfModuleCssDefault.default).wrapper,
         children: [
@@ -29947,96 +30040,13 @@ $RefreshReg$(_c, "ToastShelf");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Toast":"4zgg1","./ToastShelf.module.css":"8umuT","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../ToastProvider":"kY0Qf"}],"8umuT":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Toast":"4zgg1","./ToastShelf.module.css":"8umuT","../ToastProvider":"kY0Qf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8umuT":[function(require,module,exports) {
 module.exports["toast"] = `_YfUPa_toast`;
 module.exports["toast"];
 module.exports["toastWrapper"] = `_YfUPa_toastWrapper`;
 module.exports["wrapper"] = `_YfUPa_wrapper`;
 
-},{}],"kY0Qf":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "default", ()=>(0, _toastProviderDefault.default));
-var _toastProvider = require("./ToastProvider");
-parcelHelpers.exportAll(_toastProvider, exports);
-var _toastProviderDefault = parcelHelpers.interopDefault(_toastProvider);
-
-},{"./ToastProvider":"4NsNf","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4NsNf":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ad1d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ad1d.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ToastContext", ()=>ToastContext);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const ToastContext = /*#__PURE__*/ (0, _reactDefault.default).createContext();
-const VARIANT_OPTIONS = [
-    "notice",
-    "warning",
-    "success",
-    "error"
-];
-function ToastProvider({ children }) {
-    _s();
-    const [message, setMessage] = (0, _reactDefault.default).useState("");
-    const [variant, setVariant] = (0, _reactDefault.default).useState(VARIANT_OPTIONS[0]);
-    const [toasts, setToasts] = (0, _reactDefault.default).useState([
-        {
-            id: crypto.randomUUID(),
-            message: "butthead",
-            variant: "warning"
-        }
-    ]);
-    function handleAddToast(event) {
-        event.preventDefault();
-        const newToast = {
-            id: crypto.randomUUID(),
-            message: message,
-            variant: variant
-        };
-        const nextToasts = [
-            ...toasts,
-            newToast
-        ];
-        setToasts(nextToasts);
-        setMessage("");
-        setVariant(VARIANT_OPTIONS[0]);
-    }
-    function handleDismiss(id) {
-        const nextToasts = toasts.filter((toast)=>{
-            return toast.id !== id;
-        });
-        setToasts(nextToasts);
-    }
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(ToastContext.Provider, {
-        value: {
-            toasts
-        },
-        children: children
-    }, void 0, false, {
-        fileName: "src/components/ToastProvider/ToastProvider.js",
-        lineNumber: 35,
-        columnNumber: 5
-    }, this);
-}
-_s(ToastProvider, "UkGEW77+Nc53SmKXYo5jhMTq1DA=");
-_c = ToastProvider;
-exports.default = ToastProvider;
-var _c;
-$RefreshReg$(_c, "ToastProvider");
-
-  $parcel$ReactRefreshHelpers$ad1d.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cjGwk":[function(require,module,exports) {
+},{}],"cjGwk":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "default", ()=>(0, _footerDefault.default));
@@ -30110,6 +30120,6 @@ $RefreshReg$(_c, "Footer");
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Footer.module.css":"dDD2s","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dDD2s":[function(require,module,exports) {
 module.exports["wrapper"] = `BOBUQq_wrapper`;
 
-},{}]},["farZc","1xC6H","8lqZg"], "8lqZg", "parcelRequire50c3")
+},{}]},["cUXhu","1xC6H","8lqZg"], "8lqZg", "parcelRequire50c3")
 
 //# sourceMappingURL=index.975ef6c8.js.map
